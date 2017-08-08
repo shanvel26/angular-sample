@@ -18,7 +18,7 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (data) {
-            _this.heroes = data.splice(1, 5);
+            _this.heroes = data;
         });
     };
     return DashboardComponent;
@@ -26,7 +26,8 @@ var DashboardComponent = (function () {
 DashboardComponent = __decorate([
     core_1.Component({
         selector: 'my-dashboard',
-        templateUrl: './dashboard.component.html'
+        templateUrl: './dashboard.component.html',
+        styleUrls: ['./dashboard.component.css']
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService])
 ], DashboardComponent);

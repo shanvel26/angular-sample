@@ -84,6 +84,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@ngrx/store@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-4.0.2.tgz#bd0388f0444a78b87059738274a3d3b5cc43e402"
+
 "@types/angular-animate@^1.5.5":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@types/angular-animate/-/angular-animate-1.5.8.tgz#578e058ee0ca5539e1795421a91ae2f52581dc8f"
@@ -2392,11 +2396,7 @@ loud-rejection@^1.0.0:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
 
-lru-cache@2:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
-
-lru-cache@2.2.x:
+lru-cache@2, lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
 
@@ -3881,16 +3881,9 @@ ws@1.1.1:
     options ">=0.0.5"
     ultron "1.0.x"
 
-ws@1.1.2:
+ws@1.1.2, ws@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.2.tgz#8a244fa052401e08c9886cf44a85189e1fd4067f"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
-ws@^1.0.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"

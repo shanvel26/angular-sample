@@ -7,34 +7,28 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { DashboardComponent } from './dashboard.component';
+import { CounterComponent } from './counter.component';
 
 import { HeroService } from './hero.service';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter';
 
 @NgModule({
   imports: [
     BrowserModule,
+    StoreModule.forRoot({ counter: counterReducer }),
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      }
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    CounterComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [ HeroService ]
