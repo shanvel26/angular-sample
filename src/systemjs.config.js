@@ -30,10 +30,12 @@
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
 
       // other libraries
-      'rxjs':                      'npm:rxjs',
+      'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      // '@ngrx/core': 'node_modules/@ngrx/core/bundles/core.min.umd.js',
-      '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.min.js'
+      '@ngrx/core': 'node_modules/@ngrx/core/bundles/core.min.umd.js',
+      '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.min.js',
+      'reselect': 'node_modules/reselect/dist/reselect.js',
+      'ngrx-store-logger': 'node_modules/ngrx-store-logger/dist/index.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

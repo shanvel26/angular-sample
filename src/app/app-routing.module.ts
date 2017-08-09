@@ -8,7 +8,10 @@ import { CounterComponent } from './counter.component';
 
 const routes: Routes = [
   
-
+  {
+    path: 'counter',
+    component: CounterComponent
+  },
   {
     path: '',
     redirectTo: '/dashboard',
@@ -25,10 +28,6 @@ const routes: Routes = [
   {
     path: 'heroes',
     component: HeroesComponent
-  },
-  {
-    path: 'counter',
-    component: CounterComponent
   }
 ]
 

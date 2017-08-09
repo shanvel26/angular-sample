@@ -12,14 +12,18 @@ import { CounterComponent } from './counter.component';
 import { HeroService } from './hero.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import {StoreModule} from "@ngrx/store";
+import { compose } from '@ngrx/core';
 
-import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './counter';
+import {metaReducer} from "./index";
+import { reducer } from './counter.reducer';
+
+import { combineReducers} from "@ngrx/store";
 
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ counter: counterReducer }),
+    StoreModule.forRoot({'counter': reducer}),
     FormsModule,
     AppRoutingModule
   ],

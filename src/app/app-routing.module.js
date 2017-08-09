@@ -14,6 +14,10 @@ var dashboard_component_1 = require("./dashboard.component");
 var counter_component_1 = require("./counter.component");
 var routes = [
     {
+        path: 'counter',
+        component: counter_component_1.CounterComponent
+    },
+    {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full'
@@ -29,10 +33,6 @@ var routes = [
     {
         path: 'heroes',
         component: heroes_component_1.HeroesComponent
-    },
-    {
-        path: 'counter',
-        component: counter_component_1.CounterComponent
     }
 ];
 var AppRoutingModule = (function () {

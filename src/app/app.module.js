@@ -17,7 +17,7 @@ var counter_component_1 = require("./counter.component");
 var hero_service_1 = require("./hero.service");
 var app_routing_module_1 = require("./app-routing.module");
 var store_1 = require("@ngrx/store");
-var counter_1 = require("./counter");
+var counter_reducer_1 = require("./counter.reducer");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +27,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
-            store_1.StoreModule.forRoot({ counter: counter_1.counterReducer }),
+            store_1.StoreModule.forRoot({ 'counter': counter_reducer_1.reducer }),
             forms_1.FormsModule,
             app_routing_module_1.AppRoutingModule
         ],

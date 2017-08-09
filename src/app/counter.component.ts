@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { INCREMENT, DECREMENT, RESET } from './counter';
+import { Subscription } from 'rxjs/Subscription';
+import { Store } from '@ngrx/store';
 
-interface AppState {
-  counter: number;
-}
+import * as fromRoot from './index';
+import { SELECT_SHAPE, SELECT_FONT, ADD_TEXT, TOGGLE_CLIP, TOGGLE_GEMS, COMPLETE } from './counter.action';
 
 @Component({
 	selector: 'my-app',
@@ -15,24 +14,31 @@ interface AppState {
 		<button (click)="decrement()">Decrement</button>
 
 		<button (click)="reset()">Reset Counter</button>
+		<div>From other comp: {{text}}</div>
 	`
 })
-export class CounterComponent {
-	counter: Observable<number>;
 
-	constructor(private store: Store<AppState>) {
-		this.counter = store.select<number>('counter');
+export class CounterComponent implements OnInit {
+	private text: string;
+	// public cnt: Observable<any>;
+
+	constructor(private _store: Store<fromRoot.AppState>) {
+		_store.select('counter').subscribe((state) => {
+			this.text = state.text;
+			console.log('state=', this.text)
+		})
 	}
+
+  ngOnInit() {
+    
+  }
 
 	increment(){
-		this.store.dispatch({ type: INCREMENT });
-	}
+		console.log('increment called...');
+		// console.log(this._store)
+		this._store.dispatch({ type: 'ADD_TEXT', payload: 'Shanmugavel S' });
 
-	decrement(){
-		this.store.dispatch({ type: DECREMENT });
-	}
 
-	reset(){
-		this.store.dispatch({ type: RESET });
+
 	}
 }
